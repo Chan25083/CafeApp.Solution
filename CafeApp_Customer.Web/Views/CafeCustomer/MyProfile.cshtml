@@ -1,0 +1,33 @@
+﻿@model CafeApp.Model.User
+
+@{
+    ViewBag.Title = "MyProfile";
+}
+
+<h2>My Profile</h2>
+
+<div>
+    <h4>User</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Username)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Username)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Balance)
+        </dt>
+
+        <dd>
+            <span>RM @Html.DisplayFor(model => model.Balance)</span>
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Back to Menu", "CustomerMenu")
+</p>

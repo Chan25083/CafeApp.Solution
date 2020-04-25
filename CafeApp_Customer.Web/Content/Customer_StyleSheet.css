@@ -1,0 +1,153 @@
+﻿.Fail {
+    font-size: 20px;
+    background-color: lightpink;
+    color: red;
+    width: 95%;
+    padding: 15px 0px 15px 10px;
+}
+
+.Successfull {
+    font-size: 20px;
+    background-color: lightgreen;
+    color: green;
+    width: 95%;
+    padding: 15px 0px 15px 10px;
+}
+
+.logo {
+    height: 150px;
+}
+
+.tableBox {
+    text-align: center;
+    font-size: 30px;
+    width: 50%;
+    height: 80%;
+    margin: 50px auto;
+}
+
+.TableText {
+    text-align: left;
+    font-size: 20px;
+    width: 500px;
+    height: 300px;
+    margin: 10px auto;
+}
+
+.textBoxSize {
+    font-size: 20px;
+    width: 80%;
+}
+
+.Error {
+    font-size: 20px;
+    margin-top: 0px;
+    color: red;
+}
+
+.LoginButton {
+    background-color: yellow;
+    font-size: 20px;
+    color: black;
+    box-shadow: 1px 1px 1px;
+    padding: 5px;
+    border-color: yellow;
+    border-radius: 4px;
+}
+
+img.titleIcon {
+    width: 50px;
+    height: 50px;
+    padding: 5px;
+}
+
+.icontable {
+    display: flex;
+    max-width: 100%;
+    flex-wrap: wrap;
+}
+
+.icon {
+    padding: 10px;
+    margin: 10px 50px;
+    flex-grow: 1;
+    text-align: center;
+    font-size: 30px;
+}
+
+.iconText {
+    text-align: center;
+    font-size: 30px;
+    color: black;
+}
+
+img.icon {
+    max-width: 200px;
+    height: 200px;
+}
+
+.redText {
+    color: red;
+    font-size: 30px;
+}
+
+.tableTaked {
+    color: red;
+    font-size: 20px;
+}
+
+.tableEmpty {
+    color: green;
+    font-size: 20px;
+}
+
+.tableName {
+    font-size:35px;
+}
+
+.tableMenu {
+    padding: 1px;
+    margin: 10px;
+    flex-grow: 1;
+    text-align: center;
+}
+
+.tableBtn {
+    font-size: 20px;
+}
+
+.foodtable {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.foodMenu {
+    margin: 10px;
+    flex-grow: 1;
+    text-align: center;
+    border: 3px solid black;
+    width: 20px;
+}
+
+.foodName {
+    font-size: 30px;
+    margin: 0px;
+}
+.foodText {
+    font-size: 20px;
+    margin: 0px;
+}
+
+.foodBtn {
+    font-size: 25px;
+    background-color: black;
+    color: white;
+    padding: 5px 5px;
+    border-color: black;
+    width:100%;
+}
+
+img.foodPicter {
+    width: 100%;
+    height: 250px;
+}

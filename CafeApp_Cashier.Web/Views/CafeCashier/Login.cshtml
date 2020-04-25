@@ -1,0 +1,42 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+    Layout = null;
+}
+
+    <link href="~/Content/StyleSheet1.css" rel="stylesheet" />
+
+<div class="tableBox">
+
+    <div>
+        <a href="http://localhost:53884/">Admin</a> |
+        <a href="http://localhost:56299/">Cashier</a> |
+        <a href="http://localhost:64848/">Customer</a>
+    </div>
+    <h4>Cashier</h4>
+
+    <img src="http://localhost:53884/Image_Icon/Logo.jpg" class="logo" />
+
+    <form action="/CafeCashier/Login" method="post" class="TableText">
+        <div>
+            <h3 style="margin-bottom:0px;">UserName</h3>
+            @Html.TextBox("username", null, new { @class = "textBoxSize" })<br />
+            <p class="Error">@ViewBag.UserName</p>
+        </div>
+        <div>
+            <h3 style="margin-bottom:0px;">Password</h3>
+            @Html.Password("password", null, new { @class = "textBoxSize" })<br />
+            <p class="Error">@ViewBag.Password</p>
+        </div>
+
+        <input class="LoginButton" type="submit" value="Login" />
+
+        @{
+            if (@ViewBag.LoginFail != null)
+            {
+                <p class="Fail">@ViewBag.LoginFail</p>
+            }
+        }
+    </form>
+</div>
+

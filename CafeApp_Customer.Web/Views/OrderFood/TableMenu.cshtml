@@ -1,0 +1,47 @@
+﻿@model IEnumerable<CafeApp.Model.Table>
+
+@{
+    ViewBag.Title = "TableMenu";
+}
+
+<h2>Table Menu</h2>
+<h3>Choose your Table</h3>
+
+<div>
+    @Html.ActionLink("Back to Menu", "CustomerMenu","CafeCustomer")
+</div>
+
+<div class="icontable">
+    @{
+        if (ViewBag.NoTable != null)
+        {
+            <p class="redText">@ViewBag.NoTable</p>
+        }
+        else
+        {
+            foreach (var item in Model)
+            {
+                <div class="tableMenu">
+                    <p class="tableName">
+                        @Html.DisplayFor(modelItem => item.TableName)
+                    </p>
+
+                    @if (item.TablePlace == 0)
+                    {
+                        <p class="tableEmpty">
+                            @Html.DisplayFor(modelItem => item.TablePlace)
+                        </p>
+                    }
+
+                    else
+                    {
+                        <p class="tableTaked">
+                            @Html.DisplayFor(modelItem => item.TablePlace)
+                        </p>
+                    }
+                    <button class="tableBtn"> @Html.ActionLink("Enter", "FoodCart", new { id = item.TableId })</button>
+                </div>
+            }
+        }
+    }
+</div>

@@ -1,0 +1,37 @@
+﻿@model IEnumerable<CafeApp.Model.Menu>
+
+@{
+    ViewBag.Title = "FoodMenu";
+}
+
+<h2>Food Menu</h2>
+
+<div>
+    @Html.ActionLink("Back", "FoodCart", "OrderFood")
+</div>
+
+<div class="foodtable">
+    @if (ViewBag.NoMenu != null)
+    {
+        <p class="redText">@ViewBag.NoMenu</p>
+    }
+    else
+    {
+        if (ViewBag.OrderFood != null)
+        {
+            <p class="Successfull">@ViewBag.OrderFood</p>
+        }
+
+        foreach (var item in Model)
+        {
+            <div class="foodMenu">
+                <img src="@Url.Action("RenderImage", new { id = item.MenuId })" class="foodPicter" />
+                <p class="foodName">@Html.DisplayFor(modelItem => item.FoodName)</p>
+                <p class="foodText">@Html.DisplayFor(modelItem => item.FoodType)</p>
+                <p class="foodText">RM @Html.DisplayFor(modelItem => item.Price)</p>
+
+                <button class="foodBtn" value="@item.MenuId">Order Food</button>
+            </div>
+        }
+    }
+</div>

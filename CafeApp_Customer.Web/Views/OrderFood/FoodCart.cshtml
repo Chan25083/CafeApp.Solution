@@ -1,0 +1,64 @@
+﻿@model IEnumerable<CafeApp.Model.TableCartList>
+
+@{
+    ViewBag.Title = "FoodCart";
+}
+
+<h2>Cart</h2>
+
+<div>
+    @Html.ActionLink("Order Food", "FoodMenu") |
+    @Html.ActionLink("Back", "TableMenu")
+</div>
+@{
+    if (ViewBag.NoOrder != null)
+    {
+        <p class="redText">@ViewBag.NoOrder</p>
+    }
+    else
+    {
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayName("Food Name")
+                </th>
+                <th>
+                    @Html.DisplayName("Price")
+                </th>
+                <th>
+                    @Html.DisplayName("Quantity")
+                </th>
+                <th>
+                    @Html.DisplayName("Total Price")
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FoodName)
+                    </td>
+                    <td>
+                        RM @Html.DisplayFor(modelItem => item.UnitPrice)
+                    </td>
+                    <td>
+                        <button class="addUnit" value="@item.CartId">+</button>
+                        @Html.DisplayFor(modelItem => item.Quantity)
+                        <button class="minusUnit" value="@item.CartId">-</button>
+                    </td>
+                    <td>
+                        RM @Html.DisplayFor(modelItem => item.TotalPrice)
+                    </td>
+                    <td>
+                        <button class="deleteOrder" value="@item.CartId">X</button>
+                    </td>
+                </tr>
+            }
+
+        </table>
+
+        <h3>Sub Total: RM @ViewBag.subTotal</h3>
+    }
+}
